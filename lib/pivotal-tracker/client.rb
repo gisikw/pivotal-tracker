@@ -9,7 +9,6 @@ module PivotalTracker
       end
 
       def token(username, password, method='post')
-        return @token if @token
         response = if method == 'post'
           RestClient.post 'https://www.pivotaltracker.com/services/v3/tokens/active', :username => username, :password => password
         else
